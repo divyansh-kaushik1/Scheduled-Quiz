@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <link rel="stylesheet" href="static/css/quizzes.css">
+</head>
+<body>
+
+    <div class="menubar">
+        <a href="/">Back</a>
+    </div>
+
+    <div class="create-quiz">
+        <form action="{{ url_for('quizzes')}}" method="POST" enctype="multipart/form-data">
+            <input class="in-text" type="text" name="topic" placeholder="Topic" required/>
+
+            <input class="in-text" type="text" name="question" placeholder="Question" required/>
+
+            <input class="in-text" type="text" name="option-1" placeholder="Option-1" required/>
+            <input class="in-text" type="text" name="option-2" placeholder="Option-2" required/>
+            <input class="in-text" type="text" name="option-3" placeholder="Option-2" required/>
+            <input class="in-text" type="text" name="option-4" placeholder="Option-3" required/>
+            <input class="in-text" type="text" name="answer" placeholder="Answer" required/>
+
+            <label for="startTime">Start Time</label><input type="datetime-local" name="startTime" required/>
+            <label for="endTime">End Time</label><input type="datetime-local" name="endTime" required/>
+            <input id="submit-btn" type="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+</html>

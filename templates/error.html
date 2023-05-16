@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+
+        .menubar {
+            background-color: lightgreen;
+            display: flex;
+            height: 5rem;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        a {
+            height: 80%;
+            width: 20%;
+            background-color: lightcyan;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-decoration: none;
+            color: black;
+            border-radius: 20%;
+            border: 2px solid;
+            border-color: black;
+        }
+
+        .error-box {
+            height: calc(100vh - 7rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menubar">
+        <a href="/">Home</a>
+    </div>
+
+    <div class="error-box">
+        {{err}}
+    </div>
+
+</body>
+
+</html>

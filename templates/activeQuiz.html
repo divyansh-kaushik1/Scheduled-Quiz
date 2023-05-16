@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Quizzes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+
+        .menubar {
+            background-color: lightgreen;
+            display: flex;
+            height: 5rem;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .menubar a {
+            height: 80%;
+            width: 20%;
+            background-color: lightcyan;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-decoration: none;
+            color: black;
+            border-radius: 20%;
+            border: 2px solid;
+            border-color: black;
+        }
+
+        .active-quiz {
+            height: calc(100vh - 7rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #pressed {
+            background-color: lightblue;
+        }
+
+        .topic {
+            height: 2rem;
+            width: 40rem;
+            display: flex;
+            background-color: lightskyblue;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0.2rem;
+        }
+
+        .quiz {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem;
+        }
+
+        .idn {
+            width: 10%;
+            text-align: center;
+        }
+
+        .topic {
+            width: 40%;
+            text-align: center;
+        }
+
+        .status {
+            width: 40%;
+            text-align: center;
+        }
+
+        .activeQ div {
+            background-color: lightskyblue;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menubar">
+        <a href="/">Home</a>
+        <a id="pressed" href="/quizzes/active">Active</a>
+        <a href="/quizzes/all">All</a>
+    </div>
+
+    <div class="activeQ">
+        {% for allq in activeQList %}
+        <a href="/showQuiz/{{allq['_id']}}">
+            <div class="quiz">
+                <div class="idn">{{allq['_id']+1}}</div>
+                <div class="topic">{{allq['topic']}}</div>
+                <div class="status">{{allq['status']}}</div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>

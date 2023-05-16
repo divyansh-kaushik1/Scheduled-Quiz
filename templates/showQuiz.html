@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Quiz</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+
+        .menubar {
+            background-color: lightgreen;
+            display: flex;
+            height: 5rem;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .menubar a {
+            height: 80%;
+            width: 20%;
+            background-color: lightcyan;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-decoration: none;
+            color: black;
+            border-radius: 20%;
+            border: 2px solid;
+            border-color: black;
+        }
+
+        .quiz-cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #submit-btn {
+            height: 1.5rem;
+            width: 10rem;
+            margin: 0.5rem;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menubar">
+        <a href="/">Home</a>
+    </div>
+
+    <div class="quiz-cont">
+        <h2 class="quiz-det">{{quizData["_id"]+1}}: {{quizData["topic"]}}</h2>
+        <div class="quiz-det">{{quizData["question"]}}</div>
+        <div class="options">
+            <p><input type="radio" name="options" value="{{quizData['option-1']}}" class="quiz-det">&nbsp;
+                {{quizData["option-1"]}}</input></p>
+            <p><input type="radio" name="options" value="{{quizData['option-2']}}" class="quiz-det">&nbsp;
+                {{quizData["option-2"]}}</input></p>
+            <p><input type="radio" name="options" value="{{quizData['option-3']}}" class="quiz-det">&nbsp;
+                {{quizData["option-3"]}}</input></p>
+            <p><input type="radio" name="options" value="{{quizData['option-4']}}" class="quiz-det">&nbsp;
+                {{quizData["option-4"]}}</input></p>
+
+            <a href="/"><input id="submit-btn" type="submit" value="Submit"/></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
